@@ -10,6 +10,8 @@ services:
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
     ports:
       - "9200:9200"
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
     networks:
       - elastic
 
@@ -54,3 +56,6 @@ services:
 networks:
   elastic:
     driver: bridge
+
+volumes:
+  es_data:
